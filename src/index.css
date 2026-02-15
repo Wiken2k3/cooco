@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================= GOOGLE FONTS ================= */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Poppins:wght@700&display=swap');
+
+/* ================= ROOT VARIABLES ================= */
+:root {
+  /* ===== MAIN COLORS ===== */
+  --color-main: #57bbff;
+  --color-white: #ffffff;
+  --color-danger: #e9465f;
+  --color-yellow: #ffe365;
+
+  /* ===== SUB COLORS ===== */
+  --color-sub-cyan: #8edee7;
+  --color-sub-blue: #3099ff;
+  --color-sub-green: #adc769;
+  --color-sub-orange: #fac172;
+  --color-sub-coral: #ff8357;
+
+  /* ===== UI COLORS ===== */
+  --color-background: #ffffff;
+  --color-card: #ffffff;
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-text: #111827;
+  --color-text-muted: #6b7280;
+
+  /* ===== FONTS ===== */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+}
+
+/* ================= BASE RESET ================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ================= HEADINGS ================= */
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  margin: 0;
+}

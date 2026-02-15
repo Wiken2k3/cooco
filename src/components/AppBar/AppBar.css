@@ -1,0 +1,180 @@
+/* ================= APP BAR ================= */
+
+.app-bar {
+  background: var(--color-card);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.app-bar-container {
+  max-width: 390px;
+  margin: 0 auto;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-bar-title {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+  margin: 0;
+}
+
+/* ================= ACTIONS ================= */
+
+.app-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ICON BUTTON */
+.app-bar-icon-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #d1e5f8;
+  border: 1px solid var(--color-border);
+  color: var(--color-button-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.app-bar-icon-button svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2.5;
+}
+
+.app-bar-icon-button:hover {
+  background-color: #b3d9f2;
+  transform: scale(1.05);
+}
+
+.app-bar-icon-button:active {
+  transform: scale(0.95);
+}
+
+/* ================= DROPDOWN ================= */
+
+.more-wrapper {
+  position: relative;
+}
+
+.more-menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 10px);
+  width: 280px;
+
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  border-radius: 18px;
+  padding: 4px; /* QUAN TRỌNG: ÔM ITEM */
+
+  box-shadow: 0 14px 32px rgba(0,0,0,.28);
+  border: 1px solid rgba(0,0,0,.08);
+}
+
+/* ================= MENU ITEM ================= */
+
+.menu-item {
+  width: 100%;
+  height: 50px;
+
+  padding-left: 16px;
+  padding-right: 16px;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+
+  font-size: 17px;
+  font-weight: 500;
+
+  border-radius: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  transition: background .15s ease;
+  color: #111827;
+}
+
+.menu-item:hover {
+  background: rgba(0,0,0,.06);
+}
+
+.menu-label {
+  text-align: left;
+}
+
+.menu-icon {
+  width: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.3;
+}
+
+/* DESTRUCTIVE */
+.menu-item.destructive,
+.menu-item.destructive .menu-icon svg {
+  color: #ef4444;
+}
+
+.menu-item.destructive:hover {
+  background: rgba(239,68,68,.15);
+}
+
+/* DIVIDER */
+.menu-divider {
+  height: 1px;
+  margin: 6px 16px;
+  background: rgba(0,0,0,.12);
+}
+
+/* ================= TOGGLE ================= */
+
+.toggle-switch {
+  width: 50px;
+  height: 26px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  position: relative;
+  cursor: pointer;
+  transition: background .25s ease;
+}
+
+.toggle-switch.on {
+  background: #18baf8;
+}
+
+.toggle-slider {
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform .25s cubic-bezier(.4,0,.2,1);
+  box-shadow: 0 2px 6px rgba(0,0,0,.25);
+}
+
+.toggle-switch.on .toggle-slider {
+  transform: translateX(24px);
+}

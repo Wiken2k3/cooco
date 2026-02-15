@@ -1,0 +1,18 @@
+.recipe-section {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+
+  box-shadow: var(--shadow-soft);
+}
+
+.recipe-section-title {
+  padding: 14px 20px;
+  font-size: 12px;
+  letter-spacing: .5px;
+
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+}

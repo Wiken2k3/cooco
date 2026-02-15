@@ -1,0 +1,91 @@
+.feed-card {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* HEADER */
+.feed-header {
+  margin-bottom: 14px;
+}
+
+/* ❌ bỏ space-between */
+.feed-source {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* khoảng cách avatar và meta */
+}
+
+.feed-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: black;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.feed-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.feed-name {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.feed-time {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+/* IMAGE */
+.feed-image-wrapper {
+  position: relative;
+}
+
+.feed-image {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+/* DOWNLOAD BUTTON – giống hình iOS */
+.download-btn {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+
+  width: 46px;
+  height: 46px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: #57bbff;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 20px rgba(87,187,255,0.45);
+  transition: transform 0.15s ease;
+}
+
+.download-btn:active {
+  transform: scale(0.92);
+}

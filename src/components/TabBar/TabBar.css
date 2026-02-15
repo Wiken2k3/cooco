@@ -1,0 +1,70 @@
+.tab-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  background-color: var(--color-card, #ffffff);
+  border-top: 1px solid var(--color-border, #e5e7eb);
+
+  padding: 10px 8px calc(14px + env(safe-area-inset-bottom));
+}
+
+/* BUTTON */
+.tab-bar-btn {
+  flex: 1;
+  background: none;
+  border: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  padding: 6px 0;
+  cursor: pointer;
+
+  font-family: var(--font-body);
+  color: var(--color-text-muted, #9ca3af);
+
+  transition: color 0.2s ease, transform 0.15s ease;
+}
+
+/* ICON */
+.tab-bar-icon {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2.2;
+  transition: transform 0.15s ease;
+}
+
+/* LABEL */
+.tab-bar-label {
+  font-size: 10.5px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.2px;
+}
+
+/* ACTIVE */
+.tab-bar-btn.active {
+  color: var(--color-main); /* #57bbff */
+}
+
+.tab-bar-btn.active .tab-bar-icon {
+  stroke-width: 2.8;
+  transform: scale(1.05);
+}
+
+/* HOVER (desktop only) */
+@media (hover: hover) {
+  .tab-bar-btn:hover {
+    color: var(--color-text);
+  }
+}
+
+/* DARK MODE */
+html.dark .tab-bar {
+  background-color: #0f172a;
+  border-color: #1f2937;
+}

@@ -1,0 +1,24 @@
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--color-background);
+}
+
+/* CONTENT SCROLL */
+.app-content {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  /* Chiều cao tabbar ~ 78–85px */
+  padding-bottom: calc(85px + env(safe-area-inset-bottom));
+
+  scroll-behavior: smooth;
+}
+
+/* Ẩn scrollbar cho giống mobile */
+.app-content::-webkit-scrollbar {
+  width: 0px;
+}

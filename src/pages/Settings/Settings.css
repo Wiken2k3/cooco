@@ -1,0 +1,189 @@
+/* =============================
+   CONTAINER
+============================= */
+
+.settings-container {
+  width: 100%;
+  min-height: 100%;
+  padding: 20px 16px 96px;
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+
+/* =============================
+   SECTION
+============================= */
+
+.settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.settings-section-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  padding: 0 6px;
+}
+
+
+/* =============================
+   CARD (modern surface)
+============================= */
+
+.settings-card {
+  background: var(--color-card);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,.05);
+  border: 1px solid var(--color-border);
+}
+
+
+/* =============================
+   ROW
+============================= */
+
+.settings-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--color-border);
+
+  background: transparent;
+  transition: background .18s ease;
+}
+
+.settings-row:last-child {
+  border-bottom: none;
+}
+
+.settings-row:active {
+  background: rgba(0,0,0,.04);
+}
+
+html.dark .settings-row:active {
+  background: rgba(255,255,255,.05);
+}
+
+
+/* =============================
+   LEFT SIDE
+============================= */
+
+.row-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+}
+
+.row-icon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+  background: rgba(0,0,0,.06);
+}
+
+html.dark .row-icon {
+  background: rgba(255,255,255,.08);
+}
+
+.row-icon svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-text);
+}
+
+
+/* =============================
+   TEXT
+============================= */
+
+.row-label {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.row-description {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.row-value {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+
+/* =============================
+   CHEVRON
+============================= */
+
+.row-chevron {
+  opacity: .6;
+}
+
+
+/* =============================
+   TOGGLE (modern iOS)
+============================= */
+
+.switch {
+  width: 46px;
+  height: 26px;
+  border-radius: 999px;
+  position: relative;
+  background: #d1d5db;
+  transition: .25s;
+}
+
+.switch::after {
+  content: "";
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: .25s;
+}
+
+.switch.on {
+  background: var(--color-button-color);
+}
+
+.switch.on::after {
+  transform: translateX(20px);
+}
+
+
+/* =============================
+   DANGER
+============================= */
+
+.settings-row.danger {
+  color: #ef4444;
+}
+
+.settings-row.danger .row-icon {
+  background: rgba(239,68,68,.12);
+}

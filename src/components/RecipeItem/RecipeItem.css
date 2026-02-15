@@ -1,0 +1,80 @@
+.recipe-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.recipe-item:last-child {
+  border-bottom: none;
+}
+
+.recipe-item:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+html.dark .recipe-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.recipe-image {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  object-fit: cover;
+  border: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.recipe-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  overflow: hidden;
+}
+
+.recipe-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recipe-meta {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.recipe-more-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-border);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.recipe-more-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.5;
+}
+
+.recipe-more-btn:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+html.dark .recipe-more-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

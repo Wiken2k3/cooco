@@ -1,0 +1,14 @@
+.featured-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.featured-section h3 {
+  font-size: 12px;
+  font-weight: 600;
+
+  color: var(--color-text-muted);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}

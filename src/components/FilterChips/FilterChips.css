@@ -1,0 +1,45 @@
+.filter-chips {
+  display: flex;
+  gap: 10px;
+
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.filter-chips::-webkit-scrollbar {
+  display: none;
+}
+
+/* chip */
+.chip {
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+
+  white-space: nowrap;
+
+  transition: background var(--transition-fast),
+              transform var(--transition-fast);
+}
+
+.chip:hover {
+  background: var(--color-hover);
+}
+
+.chip:active {
+  transform: scale(0.95);
+}
+
+/* selected state (logic thêm class .active) */
+.chip.active {
+  background: var(--color-button-color);
+  color: white;
+  border-color: transparent;
+}

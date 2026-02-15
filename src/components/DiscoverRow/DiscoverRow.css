@@ -1,0 +1,44 @@
+.discover-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 14px 20px;
+
+  border-bottom: 1px solid var(--color-border);
+
+  cursor: pointer;
+
+  transition: background var(--transition-fast);
+}
+
+.discover-row:last-child {
+  border-bottom: none;
+}
+
+.discover-row:hover {
+  background: var(--color-hover);
+}
+
+/* image */
+.discover-row-image {
+  width: 52px;
+  height: 52px;
+
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+/* title */
+.discover-row-title {
+  flex: 1;
+  font-size: 15px;
+  font-weight: 500;
+
+  color: var(--color-text);
+}
+
+/* icon */
+.discover-row-icon {
+  color: var(--color-text-muted);
+}

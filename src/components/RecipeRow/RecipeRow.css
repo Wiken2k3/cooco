@@ -1,0 +1,38 @@
+.recipe-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 14px 20px;
+
+  transition: background var(--transition-fast);
+  cursor: pointer;
+}
+
+.recipe-row:hover {
+  background: var(--color-hover);
+}
+
+/* image */
+.recipe-row img {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+/* text */
+.recipe-row-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.recipe-row-meta {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.recipe-row svg {
+  color: var(--color-text-muted);
+}

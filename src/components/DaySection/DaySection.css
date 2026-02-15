@@ -1,0 +1,85 @@
+.day-section {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease;
+}
+
+.day-section:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.day-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--color-border);
+  background-color: #F4F4F4;
+}
+
+html.dark .day-section-header {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.day-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.day-section-date {
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+.day-section-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.day-section-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #D1E5F8;
+  border: 1px solid var(--color-border);
+  color: var(--color-button-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.day-section-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.5;
+}
+
+html.dark .day-section-btn {
+  background-color: rgba(24, 186, 248, 0.2);
+}
+
+html.dark .day-section-btn:hover {
+  background-color: rgba(24, 186, 248, 0.3);
+}
+
+.day-section-btn:hover {
+  background-color: #B3D9F2;
+  transform: scale(1.05);
+}
+
+.day-section-btn:active {
+  transform: scale(0.95);
+}
+
+.day-section-meals {
+  display: flex;
+  flex-direction: column;
+}

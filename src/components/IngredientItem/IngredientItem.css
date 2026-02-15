@@ -1,0 +1,47 @@
+.ingredient-item {
+  padding: 12px 14px;
+  border-radius: 14px;
+
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.ingredient-item:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+html.dark .ingredient-item:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* Top row: name + chevron / icon */
+.ingredient-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.ingredient-row svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2.5;
+  color: var(--color-text-muted);
+}
+
+/* Sub info */
+.ingredient-info {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}

@@ -1,0 +1,18 @@
+.recipes-page {
+  padding: 16px;
+  padding-bottom: 90px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.recipes-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.recipes-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

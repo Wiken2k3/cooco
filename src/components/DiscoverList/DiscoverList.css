@@ -1,0 +1,25 @@
+.discover-list {
+  background: var(--color-surface);
+
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+
+  box-shadow: var(--shadow-soft);
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.discover-list h3 {
+  padding: 14px 20px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  color: var(--color-text-muted);
+  letter-spacing: 0.5px;
+
+  border-bottom: 1px solid var(--color-border);
+}

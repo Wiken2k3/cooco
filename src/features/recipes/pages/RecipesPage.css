@@ -1,0 +1,25 @@
+.recipes-page {
+  padding: 20px;
+}
+
+.recipes-header {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.recipes-search,
+.recipes-filter {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
+  color: var(--color-text);
+}
+
+.recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+}

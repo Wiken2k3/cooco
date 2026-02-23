@@ -65,6 +65,6 @@
 
 /* DARK MODE */
 html.dark .tab-bar {
-  background-color: #0f172a;
+  /* background-color: #0f172a; */
   border-color: #1f2937;
 }

@@ -1,18 +1,24 @@
 import { useState, useEffect, useRef } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import './AppBar.css'
 import {
+  ArrowLeft,
   ArrowDown,
   MoreHorizontal,
   ShoppingCart,
   Trash2,
   CloudSun,
-  WandSparkles
+  WandSparkles,
+  Plus
 } from 'lucide-react'
 
 export default function AppBar({ isDarkMode, onToggleDark }) {
+  const location = useLocation()
+  const navigate = useNavigate()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const menuRef = useRef(null)
 
+  /* Close menu when click outside */
   useEffect(() => {
     const handler = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
@@ -23,67 +29,113 @@ export default function AppBar({ isDarkMode, onToggleDark }) {
     return () => document.removeEventListener('mousedown', handler)
   }, [])
 
+  /* Route config */
+  const routeConfig = {
+    '/': {
+      title: 'Meal Plan',
+      showMore: true
+    },
+    '/recipes': {
+      title: 'Recipes'
+    },
+    '/groceries': {
+      title: 'Groceries'
+    },
+    '/discover': {
+      title: 'Discover',
+      action: <Plus size={20} />
+    },
+    '/settings': {
+      title: 'Settings'
+    }
+  }
+
+  const isRecipeDetail = location.pathname.startsWith('/recipes/')
+  const current = routeConfig[location.pathname] || {}
+
+  const title = isRecipeDetail
+    ? 'Recipe Detail'
+    : current.title || 'App'
+
   return (
     <header className="app-bar">
       <div className="app-bar-container">
-        <h1 className="app-bar-title">Meal Plan</h1>
 
+        {/* LEFT */}
+        <div className="app-bar-left">
+          {isRecipeDetail && (
+            <button
+              className="app-bar-icon-button"
+              onClick={() => navigate(-1)}
+            >
+              <ArrowLeft size={20} />
+            </button>
+          )}
+
+          <h1 className="app-bar-title">{title}</h1>
+        </div>
+
+        {/* RIGHT */}
         <div className="app-bar-actions">
-          <IconButton icon={<ArrowDown />} />
 
-          <div className="more-wrapper" ref={menuRef}>
-            <IconButton
-              icon={<MoreHorizontal />}
-              onClick={() => setIsMenuOpen(v => !v)}
-            />
+          {/* ArrowDown – cùng loại với day-section-btn */}
+          <button className="app-bar-icon-button">
+            <ArrowDown size={20} />
+          </button>
 
-            {isMenuOpen && (
-              <div className="more-menu">
-                <MenuItem
-                  label="Add to Groceries"
-                  icon={<ShoppingCart />}
-                />
+          {/* Route specific action */}
+          {current.action && (
+            <button className="app-bar-icon-button">
+              {current.action}
+            </button>
+          )}
 
-                <MenuItem
-                  label="Generate Plan for Week"
-                  icon={<WandSparkles />}
-                />
+          {/* More menu */}
+          {current.showMore && (
+            <div className="more-wrapper" ref={menuRef}>
+              <button
+                className="app-bar-icon-button"
+                onClick={() => setIsMenuOpen(v => !v)}
+              >
+                <MoreHorizontal size={20} />
+              </button>
 
-                <MenuItem
-                  label="Clear Current Week"
-                  icon={<Trash2 />}
-                  destructive
-                />
+              {isMenuOpen && (
+                <div className="more-menu">
+                  <MenuItem
+                    label="Add to Groceries"
+                    icon={<ShoppingCart size={18} />}
+                  />
+                  <MenuItem
+                    label="Generate Plan for Week"
+                    icon={<WandSparkles size={18} />}
+                  />
+                  <MenuItem
+                    label="Clear Current Week"
+                    icon={<Trash2 size={18} />}
+                    destructive
+                  />
+                  <div className="menu-divider" />
+                  <MenuItem
+                    label="Show Weather"
+                    icon={<CloudSun size={18} />}
+                  />
+                </div>
+              )}
+            </div>
+          )}
 
-                <div className="menu-divider" />
-
-                <MenuItem
-                  label="Show Weather"
-                  icon={<CloudSun />}
-                />
-              </div>
-            )}
-          </div>
-
+          {/* Dark mode toggle */}
           <div
-            className={`toggle-switch ${isDarkMode ? 'on' : 'off'}`}
+            className={`toggle-switch ${isDarkMode ? 'on' : ''}`}
             onClick={onToggleDark}
           >
             <div className="toggle-slider" />
           </div>
+
         </div>
       </div>
     </header>
-  )
-}
-
-/* ================= SUB COMPONENTS ================= */
-
-function IconButton({ icon, onClick }) {
-  return (
-    <button onClick={onClick} className="app-bar-icon-button">
-      {icon}
-    </button>
   )
 }
 

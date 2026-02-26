@@ -1,27 +1,36 @@
 /* ================= APP BAR ================= */
 
 .app-bar {
-  background: var(--color-card);
-  border-bottom: 1px solid var(--color-border);
   position: sticky;
   top: 0;
   z-index: 100;
+
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .app-bar-container {
   max-width: 390px;
   margin: 0 auto;
   padding: 20px 24px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+.app-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .app-bar-title {
-  font-size: 34px;
+  font-size: 32px;
   font-weight: 700;
   letter-spacing: -0.6px;
   margin: 0;
+  color: var(--color-text);
 }
 
 /* ================= ACTIONS ================= */
@@ -29,37 +38,50 @@
 .app-bar-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
-/* ICON BUTTON */
+/* ===== SAME STYLE AS .day-section-btn ===== */
+
 .app-bar-icon-button {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background-color: #d1e5f8;
+  background-color: #D1E5F8;
   border: 1px solid var(--color-border);
   color: var(--color-button-color);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  padding: 0;
   cursor: pointer;
   transition: all 0.15s ease;
 }
 
 .app-bar-icon-button svg {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   stroke-width: 2.5;
 }
 
 .app-bar-icon-button:hover {
-  background-color: #b3d9f2;
+  background-color: #B3D9F2;
   transform: scale(1.05);
 }
 
 .app-bar-icon-button:active {
   transform: scale(0.95);
+}
+
+/* Dark mode */
+html.dark .app-bar-icon-button {
+  background-color: rgba(24, 186, 248, 0.2);
+}
+
+html.dark .app-bar-icon-button:hover {
+  background-color: rgba(24, 186, 248, 0.3);
 }
 
 /* ================= DROPDOWN ================= */
@@ -72,67 +94,56 @@
   position: absolute;
   right: 0;
   top: calc(100% + 10px);
-  width: 280px;
+  width: 260px;
 
   background: rgba(255,255,255,.92);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
 
   border-radius: 18px;
-  padding: 4px; /* QUAN TRỌNG: ÔM ITEM */
+  padding: 4px;
 
   box-shadow: 0 14px 32px rgba(0,0,0,.28);
   border: 1px solid rgba(0,0,0,.08);
 }
 
-/* ================= MENU ITEM ================= */
+html.dark .more-menu {
+  background: rgba(30,41,59,.92);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+/* MENU ITEM */
 
 .menu-item {
   width: 100%;
-  height: 50px;
-
-  padding-left: 16px;
-  padding-right: 16px;
+  height: 48px;
+  padding: 0 16px;
 
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
 
-  font-size: 17px;
-  font-weight: 500;
-
   border-radius: 12px;
-  background: transparent;
   border: none;
-  cursor: pointer;
+  background: transparent;
 
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text);
+
+  cursor: pointer;
   transition: background .15s ease;
-  color: #111827;
 }
 
 .menu-item:hover {
   background: rgba(0,0,0,.06);
 }
 
-.menu-label {
-  text-align: left;
+html.dark .menu-item:hover {
+  background: rgba(255,255,255,.08);
 }
 
-.menu-icon {
-  width: 24px;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.menu-icon svg {
-  width: 20px;
-  height: 20px;
-  stroke-width: 2.3;
-}
-
-/* DESTRUCTIVE */
-.menu-item.destructive,
-.menu-item.destructive .menu-icon svg {
+.menu-item.destructive {
   color: #ef4444;
 }
 
@@ -140,11 +151,10 @@
   background: rgba(239,68,68,.15);
 }
 
-/* DIVIDER */
 .menu-divider {
   height: 1px;
   margin: 6px 16px;
-  background: rgba(0,0,0,.12);
+  background: var(--color-border);
 }
 
 /* ================= TOGGLE ================= */

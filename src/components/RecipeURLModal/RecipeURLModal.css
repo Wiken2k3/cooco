@@ -1,0 +1,77 @@
+.recipe-overlay {
+  position: fixed;
+  inset: 0;
+  /* backdrop-filter: blur(8px); */
+  background: rgba(0,0,0,0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* MODAL BOX */
+
+.recipe-modal {
+  width: 90%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 28px;
+  padding: 28px 24px 0 24px;
+  text-align: center;
+  animation: fadeIn .2s ease;
+}
+
+@keyframes fadeIn {
+  from { transform: scale(.95); opacity: 0 }
+  to { transform: scale(1); opacity: 1 }
+}
+
+.recipe-modal h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.recipe-modal p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* INPUT */
+
+.recipe-modal input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+/* ACTIONS */
+
+.recipe-actions {
+  display: flex;
+  border-top: 1px solid #ddd;
+  margin-top: 12px;
+}
+
+.recipe-actions button {
+  flex: 1;
+  padding: 16px 0;
+  font-size: 18px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  color: #0ea5e9;
+  border-right: 1px solid #ddd;
+}
+
+.add-btn {
+  color: #0ea5e9;
+  font-weight: 600;
+}

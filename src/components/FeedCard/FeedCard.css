@@ -1,91 +1,121 @@
+/* ================= CARD ================= */
+
 .feed-card {
-  background: #ffffff;
-  border-radius: 28px;
+  background-color: var(--color-card);
+  border-radius: 24px;
   padding: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .2s ease, background-color .3s ease;
 }
 
-/* HEADER */
+.feed-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* ================= HEADER ================= */
+
 .feed-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin-bottom: 14px;
 }
 
-/* ❌ bỏ space-between */
-.feed-source {
-  display: flex;
-  align-items: center;
-  gap: 12px; /* khoảng cách avatar và meta */
-}
-
 .feed-avatar {
-  width: 38px;
-  height: 38px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background: black;
-  color: white;
-  font-weight: 600;
-  font-size: 14px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+  background: var(--color-border);
   flex-shrink: 0;
 }
 
-.feed-meta {
-  display: flex;
-  flex-direction: column;
-}
-
-.feed-name {
-  font-family: 'Open Sans', sans-serif;
+.feed-source {
   font-weight: 600;
-  font-size: 15px;
+  color: var(--color-text);
+  flex: 1;
 }
 
 .feed-time {
-  font-size: 13px;
-  color: #9ca3af;
+  font-size: 14px;
+  color: var(--color-text-muted);
 }
 
-/* IMAGE */
+/* ================= IMAGE ================= */
+
 .feed-image-wrapper {
   position: relative;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
-.feed-image {
+.feed-image-wrapper img {
   width: 100%;
-  height: 210px;
+  display: block;
   object-fit: cover;
-  border-radius: 24px;
 }
 
-/* DOWNLOAD BUTTON – giống hình iOS */
+/* Overlay title */
+
+.feed-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 80px;
+
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+
+  text-shadow: 0 4px 12px rgba(0,0,0,.6);
+}
+
+/* ================= DOWNLOAD BUTTON ================= */
+/* SAME TYPE AS day-section-btn */
+
 .download-btn {
   position: absolute;
-  bottom: 14px;
-  right: 14px;
+  bottom: 16px;
+  right: 16px;
 
-  width: 46px;
-  height: 46px;
-
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  border: none;
 
-  background: #57bbff;
-  color: white;
+  background-color: #D1E5F8;
+  border: 1px solid var(--color-border);
+
+  color: var(--color-button-color);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
+  padding: 0;
   cursor: pointer;
+  transition: all 0.15s ease;
+}
 
-  box-shadow: 0 8px 20px rgba(87,187,255,0.45);
-  transition: transform 0.15s ease;
+.download-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2.5;
+}
+
+.download-btn:hover {
+  background-color: #B3D9F2;
+  transform: scale(1.05);
 }
 
 .download-btn:active {
-  transform: scale(0.92);
+  transform: scale(0.95);
+}
+
+/* Dark mode */
+
+html.dark .download-btn {
+  background-color: rgba(24, 186, 248, 0.2);
+}
+
+html.dark .download-btn:hover {
+  background-color: rgba(24, 186, 248, 0.3);
 }

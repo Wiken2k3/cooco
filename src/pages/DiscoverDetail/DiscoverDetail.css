@@ -1,7 +1,7 @@
 .detail-page {
   background-color: #F8F9FA;
   min-height: 100vh;
-  /* padding-bottom: 50px; Tránh bị che bởi TabBar và Save button  */
+  /* padding-bottom: 50px; */
 }
 
 /* Header */

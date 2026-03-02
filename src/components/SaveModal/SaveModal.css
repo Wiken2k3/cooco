@@ -1,0 +1,196 @@
+.save-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  /* backdrop-filter: blur(4px); */
+  display: flex;
+  align-items: flex-end; /* Bottom sheet style */
+  justify-content: center;
+  z-index: 10000;
+  padding: 10px;
+}
+
+.save-modal {
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  border-radius: 32px; /* Very rounded like Figma */
+  padding: 20px;
+  margin-bottom: 20px;
+  animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 -10px 25px rgba(0,0,0,0.1);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Header */
+.save-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.modal-btn {
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  background: #E0F2FE; /* Light blue background from design */
+  color: #00A3FF;
+}
+
+.modal-btn.save {
+  background: #00A3FF;
+  color: white;
+}
+
+.modal-title {
+  color: #888;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding-left: 5px;
+}
+
+/* Folder List Scroll */
+.folder-scroll-wrapper {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 5px 20px;
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+.folder-scroll-wrapper::-webkit-scrollbar {
+  display: none; /* Hide scrollbar Chrome/Safari */
+}
+
+.folder-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 90px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.folder-item:active {
+  transform: scale(0.95);
+}
+
+/* Folder Visual Design (iOS style) */
+.folder-visual {
+  position: relative;
+  width: 80px;
+  height: 60px;
+  margin-bottom: 12px;
+}
+
+.folder-tab {
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 35px;
+  height: 12px;
+  background: #00A3FF;
+  border-radius: 6px 6px 0 0;
+}
+
+.folder-body {
+  position: absolute;
+  inset: 0;
+  background: #00A3FF; /* Blue folder color */
+  border-radius: 0 8px 8px 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 163, 255, 0.2);
+}
+
+/* Thumbnail sticking out of folder */
+.folder-recipe-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid white;
+  border-radius: 4px;
+  transform: translateY(5px); /* Position it like it's inside */
+}
+
+/* Gray folders for empty state */
+.folder-item:not(.active) .folder-body,
+.folder-item:not(.active) .folder-tab {
+  background: #00A3FF; /* Giữ màu xanh theo thiết kế full detail feed-1 */
+}
+
+.folder-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.folder-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+}
+
+.folder-count {
+  font-size: 12px;
+  color: #999;
+}
+
+/* Highlight Selected Folder */
+.folder-item.active .folder-name {
+  color: #00A3FF;
+}
+
+.folder-item.active .folder-body {
+  outline: 3px solid rgba(0, 163, 255, 0.3);
+  outline-offset: 2px;
+}
+
+/* Dark Mode */
+.dark .save-modal {
+  background: #1E1E1E;
+}
+.dark .folder-name {
+  color: white;
+}
+/* ===== Recipe Preview ===== */
+
+.save-recipe-preview {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  padding: 14px;
+  background: #F8F9FA;
+  border-radius: 18px;
+}
+
+.save-recipe-preview img {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.save-text h4 {
+  margin: 0;
+  font-size: 12px;
+  color: #888;
+  font-weight: 500;
+}
+
+.save-text p {
+  margin: 2px 0 0 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+}

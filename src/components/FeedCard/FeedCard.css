@@ -2,10 +2,10 @@
 
 .feed-card {
   background-color: var(--color-card);
-  border-radius: 24px;
+  border-radius: 28px;
   padding: 16px;
   box-shadow: var(--shadow-sm);
-  transition: box-shadow .2s ease, background-color .3s ease;
+  transition: box-shadow .2s ease;
 }
 
 .feed-card:hover {
@@ -25,18 +25,31 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: var(--color-border);
+  overflow: hidden;
   flex-shrink: 0;
+  border: 1px solid var(--color-border);
+  background: var(--color-border);
+}
+
+.feed-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.feed-meta {
+  display: flex;
+  flex-direction: column;
 }
 
 .feed-source {
   font-weight: 600;
   color: var(--color-text);
-  flex: 1;
+  font-size: 14px;
 }
 
 .feed-time {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--color-text-muted);
 }
 
@@ -44,33 +57,34 @@
 
 .feed-image-wrapper {
   position: relative;
-  border-radius: 20px;
+  border-radius: 24px;
   overflow: hidden;
 }
 
 .feed-image-wrapper img {
   width: 100%;
-  display: block;
+  height: 240px;
   object-fit: cover;
+  display: block;
 }
 
-/* Overlay title */
+/* ================= TITLE ================= */
 
 .feed-overlay {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 80px;
-
+  top: 16px;
+  left: 16px;
   color: white;
-  font-size: 18px;
-  font-weight: 600;
+}
 
-  text-shadow: 0 4px 12px rgba(0,0,0,.6);
+.feed-overlay h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 0 6px 20px rgba(0,0,0,.5);
 }
 
 /* ================= DOWNLOAD BUTTON ================= */
-/* SAME TYPE AS day-section-btn */
 
 .download-btn {
   position: absolute;
@@ -80,25 +94,17 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-
-  background-color: #D1E5F8;
   border: 1px solid var(--color-border);
 
+  background-color: #D1E5F8;
   color: var(--color-button-color);
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  padding: 0;
   cursor: pointer;
   transition: all 0.15s ease;
-}
-
-.download-btn svg {
-  width: 20px;
-  height: 20px;
-  stroke-width: 2.5;
 }
 
 .download-btn:hover {
@@ -110,7 +116,7 @@
   transform: scale(0.95);
 }
 
-/* Dark mode */
+/* ================= DARK MODE ================= */
 
 html.dark .download-btn {
   background-color: rgba(24, 186, 248, 0.2);

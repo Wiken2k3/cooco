@@ -1,0 +1,256 @@
+.detail-page {
+  background-color: #F8F9FA;
+  min-height: 100vh;
+  padding-bottom: 50px; /* Tránh bị che bởi TabBar và Save button */
+}
+
+/* Header */
+.detail-nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.nav-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #00A3FF;
+}
+
+.history-btn {
+  background: none;
+  border: none;
+  padding: 8px;
+}
+
+/* Hero Card */
+.detail-scroll-content {
+  padding: 16px;
+}
+
+.recipe-hero-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.6));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+.hero-recipe-title {
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.source-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.8);
+  padding: 4px 12px 4px 4px;
+  border-radius: 20px;
+  width: fit-content;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.source-icon {
+  width: 24px;
+  height: 24px;
+  background: #E31C2D;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* Action Buttons */
+.action-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.btn-start {
+  flex: 1;
+  background-color: #C8EFDB; /* Màu xanh lá nhạt Figma */
+  border: none;
+  border-radius: 24px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #2D6A4F;
+}
+
+.btn-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-circle.blue { background: #D1E5F8; color: #00A3FF; }
+.btn-circle.orange { background: #FDEFD6; color: #F59E0B; }
+.btn-circle.purple { background: #E9DFFC; color: #7C3AED; }
+
+/* Stats */
+.stats-grid {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  flex: 1;
+  background: white;
+  border-radius: 20px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.stat-card.stack {
+  flex: 2;
+  justify-content: center;
+}
+
+.stat-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #888;
+}
+
+.stat-value {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Ingredients */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.section-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.control-btn-text {
+  background: #D1E5F8;
+  color: #00A3FF;
+  border: none;
+  padding: 4px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.control-btn-icon {
+  background: #D1E5F8;
+  color: #00A3FF;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ingredients-container {
+  background: white;
+  border-radius: 20px;
+  padding: 8px 16px;
+}
+
+.ingredient-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.ing-qty {
+  color: #00A3FF;
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.ing-name {
+  color: #333;
+}
+
+.ing-price {
+  color: #999;
+  font-size: 14px;
+}
+
+/* Floating Save */
+.floating-save-btn {
+  position: fixed;
+  bottom: 100px; /* Cách TabBar một khoảng */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #00A3FF;
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 163, 255, 0.4);
+}

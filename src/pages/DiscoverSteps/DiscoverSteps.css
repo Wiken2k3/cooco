@@ -1,0 +1,128 @@
+/* Phủ toàn màn hình để đè lên AppLayout/TabBar */
+.steps-screen-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: white;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  padding: env(safe-area-inset-top) 20px env(safe-area-inset-bottom);
+}
+
+/* Header */
+.steps-header {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.header-right-group {
+  display: flex;
+  gap: 15px;
+}
+
+.icon-action-btn, .close-btn {
+  background: none;
+  border: none;
+  color: #8EBDD3; /* Màu xanh nhạt của icon trong Figma */
+  cursor: pointer;
+  padding: 8px;
+}
+
+.close-btn {
+  color: #666;
+}
+
+/* Content */
+.steps-main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10px;
+  margin-bottom: 100px;
+}
+
+.step-label {
+  font-size: 24px;
+  color: #999;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.step-instruction p {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #000;
+}
+
+/* Highlight text màu xanh dương của Figma */
+.highlight {
+  color: #00A3FF;
+}
+
+/* Footer & Navigation */
+.steps-footer {
+  position: relative;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-circle-btn {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: none;
+  background-color: #00A3FF; /* Màu xanh Primary */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 163, 255, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.nav-circle-btn:active {
+  transform: scale(0.9);
+}
+
+.nav-circle-btn.prev {
+  left: 10px;
+}
+
+.nav-circle-btn.next {
+  right: 10px;
+}
+
+/* Pagination Dots */
+.step-indicators {
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  bottom: 20px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #E0E0E0;
+}
+
+.dot.active {
+  background-color: #00A3FF;
+}
+
+/* Dark mode support */
+.dark .steps-screen-overlay {
+  background-color: #121212;
+}
+.dark .step-instruction p {
+  color: white;
+}

@@ -72,7 +72,7 @@ body {
 .app-content {
   flex: 1;
   overflow-y: auto;
-  padding-bottom: 85px;
+  /* padding-bottom: 85px; */
 }
 
 .app-content::-webkit-scrollbar {
